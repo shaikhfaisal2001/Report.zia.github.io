@@ -12,8 +12,7 @@
     <style>
       body {
         font-family: Arial, sans-serif;
-        padding: 20px;
-        background: #f7f7f7;
+        padding: 20;
       }
       .container {
         background: white;
@@ -89,8 +88,8 @@
     <label>Name: <input type="text" class="name" /></label><br/>
     <label>Work Type:
       <select class="workType" onchange="toggleFields(this)">
-        <option value="WFO">WFO</option>
-        <option value="WFH">WFH</option>
+        <option value="Work From Office">Work From Office</option>
+        <option value="Work From Home">Work From Home</option>
         <option value="Leave">Leave</option>
       </select>
     </label><br/><br/>
@@ -143,11 +142,11 @@
           const name = section.querySelector(".name").value;
           const workType = section.querySelector(".workType").value;
 
-          reportLines.push(`*Employee Name* : *${name}* (${workType})`);
+          reportLines.push(`*Employee Name* : *${name}* \n(${workType})`);
 
           if (workType === "Leave") {
             reportLines.push(
-              `🛑 *${name}* is on Leave.\n----------------------\n`
+              `🛑 *${name}* is on Leave on *${date}*.\n----------------------\n`
             );
             return;
           }
@@ -299,6 +298,6 @@
 
       addEmployee();
     </script>
-    <div class="footr"><h2>Made with ❤️ by Faisal</h2></div>
+    <div class="footr"><h3>Made with ❤️ by Faisal</h3></div>
   </body>
 </html>
